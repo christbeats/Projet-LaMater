@@ -46,26 +46,18 @@ window.onload = () => {
 
 }
 
-var swiper = new swiper(".featured-slider", {
-    spaceBetween: 10,
-    loop: true,
-    centeredSlides: true,
-    autoplay: {
-        delay: 9500,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-        0: {
-            slidesPerView: 1,
-        },
-        450: {
-            slidesPerView: 2,
-        },
-        768: {
-            slidesPerView: 3,
-        },
-        1024: {
-            slidesPerView: 4,
-        },
-    },
+const selected = document.querySelector(".selected");
+const optionsContainer = document.querySelector(".options-container");
+
+const optionsList = document.querySelectorAll(".option");
+
+selected.addEventListener("click", () => {
+    optionsContainer.classList.toggle("active");
+});
+
+optionsList.forEach(0 => {
+    o.addEventListener("click", () => {
+        selected.innerHTML = 0. querySelector("label").innerHTML;
+        optionsContainer.classList.remove("active");
+    });
 });
