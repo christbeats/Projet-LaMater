@@ -87,6 +87,9 @@ section {
     background: var(--dark-color);
 }
 
+
+/* header start */
+
 .header .header-1 {
     background: #fff;
     padding: 1.5rem 9%;
@@ -108,9 +111,9 @@ section {
 .header .header-1 .search-form {
     width: 50rem;
     height: 5rem;
-    border-color: var(--border);
+    border-color: var(--black);
     overflow: hidden;
-    background: #fff;
+    background: rgb(212, 212, 212);
     display: flex;
     align-items: center;
     border: .5rem;
@@ -122,7 +125,7 @@ section {
     height: 100%;
     width: 100%;
     text-transform: none;
-    color: var(--black);
+    background: rgb(212, 212, 212);
 }
 
 .header .header-1 .search-form label {
@@ -179,6 +182,12 @@ section {
     right: 0;
     z-index: 1000;
 }
+
+
+/* header end */
+
+
+/* login start */
 
 .login-form-container {
     display: flex;
@@ -270,6 +279,12 @@ section {
     cursor: pointer;
 }
 
+
+/* login end */
+
+
+/* register start */
+
 .register-form-container {
     display: flex;
     align-items: center;
@@ -349,6 +364,12 @@ section {
     cursor: pointer;
 }
 
+
+/* register end */
+
+
+/* footer start */
+
 .footer .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -411,6 +432,12 @@ section {
     color: var(--yellow);
 }
 
+
+/* footer end */
+
+
+/* features start */
+
 .featured .featured-slider {
     display: block;
 }
@@ -464,6 +491,77 @@ section {
 }
 
 
+/* features end */
+
+
+/* grille start */
+
+.grille {
+    max-width: 1300px;
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    border: 1px solid rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+    grid-gap: 10px;
+}
+
+.grid-item {
+    width: 300px;
+    height: 400px;
+    background: rgb(255, 255, 255);
+}
+
+.grille .grid-item .box {
+    width: 25rem;
+    margin: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: var(--border);
+    text-align: center;
+}
+
+.grille .grid-item .box:hover {
+    border: var(--border-hover);
+}
+
+.grille .grid-item .box .image {
+    padding: 1rem;
+    background: linear-gradient(15deg, #eee 30%, #fff 30.1%);
+}
+
+.grille .grid-item .box .image img {
+    height: 20rem;
+}
+
+.grille .grid-item .box .content {
+    background: #eee;
+    padding: 1.5rem;
+}
+
+.grille .grid-item .box .content h3 {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.grille .grid-item .box .content .price {
+    font-size: 2.2rem;
+    color: var(--black);
+    padding-top: 1rem;
+}
+
+.grille .grid-item .box .content .price span {
+    font-size: 1.5rem;
+    color: var(--light-colour);
+    text-decoration: line-through;
+}
+
+
+/* grille end */
+
+
 /* media queries */
 
 @media (max-width:991px) {
@@ -472,9 +570,6 @@ section {
     }
     .header .header-1 {
         padding: 2rem;
-    }
-    section {
-        padding: 3rem 2rem;
     }
 }
 
