@@ -36,15 +36,15 @@ window.onscroll = () => {
 
 }
 
-window.onload = () => {
+// window.onload = () => {
 
-    if (window.scrollY > 80) {
-        document.querySelector('.header .header-2').classList.add('active');
-    } else {
-        document.querySelector('.header .header-2').classList.remove('active');
-    }
+//     if (window.scrollY > 80) {
+//         document.querySelector('.header .header-2').classList.add('active');
+//     } else {
+//         document.querySelector('.header .header-2').classList.remove('active');
+//     }
 
-}
+// }
 
 const selected = document.querySelector(".selected");
 const optionsContainer = document.querySelector(".options-container");
@@ -55,9 +55,18 @@ selected.addEventListener("click", () => {
     optionsContainer.classList.toggle("active");
 });
 
-optionsList.forEach(0 => {
+optionsList.forEach(o => {
     o.addEventListener("click", () => {
-        selected.innerHTML = 0. querySelector("label").innerHTML;
+        selected.innerHTML = o.querySelector("label").innerHTML;
         optionsContainer.classList.remove("active");
     });
 });
+
+const cart = document.querySelector('.cart');
+const btnCart = document.querySelector('#cart-btn');
+
+btnCart.addEventListener('click', openCart);
+
+function openCart() {
+    cart.classList.toggle('hidden');
+}

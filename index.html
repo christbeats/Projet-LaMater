@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Bookly</title>
 
     <!-- swiper cdn link -->
@@ -41,54 +41,52 @@
                 <div class="options-container">
                     <div class="option">
                         <input type="radio" class="radio" id="shonen" name="category">
-                        <label for="shonen">Shonen</label>
+                        <label for="shonen"> <a href="index.html">Shonen</a> </label>
                     </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="shojo" name="category">
-                        <label for="shojo">Shojo</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="seinen" name="category">
-                        <label for="seinen">Seinen</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="josei" name="category">
-                        <label for="josei">Josei</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="isekai" name="category">
-                        <label for="isekai">Isekai</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="isekai" name="category">
-                        <label for="isekai">Isekai</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="isekai" name="category">
-                        <label for="isekai">Isekai</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="isekai" name="category">
-                        <label for="isekai">Isekai</label>
-                    </div>
+                    
                 </div>
 
                 <div class="selected"> Categorie </div>
 
             </div>
-
             <!-- select end -->
 
             <div class="icons">
                 <div id="search-btn" class="fas fa-search"></div>
                 <div id="register-btn" class="fa-solid fa-pencil"></div>
                 <div id="login-btn" class="fas fa-user"></div>
-                <a href="#" class="fas fa-shopping-cart"></a>
+                <div id="cart-btn" class="fas fa-shopping-cart">
+                    <div class="cart-count">3</div>
+                </div>
             </div>
 
         </div>
 
-        <div class="header-2">
+        <!-- small cart end -->
+
+        <div class="cart hidden">
+            <div class="cart-header">cart</div>
+            <div class="products-in-cart">
+                <div class="item">
+                    <img src="image/img1.1.jpg" alt="product 1 thumb">
+                    <div class="details">
+                        <div class="product-name">featured book</div>
+                        <div class="price-group">
+                            <div class="price">10000FCFA</div>
+                            <div class="count">3</div>
+                            <div class="total-amount">30000FCFA</div>
+                        </div>
+                    </div>
+                    <div id="delete-btn" class="fa fa-trash"></div>
+                </div>
+            </div>
+            <div class="msg-empty hidden">Your cart is empty</div>
+            <div class="checkout">checkout</div>
+        </div>
+
+        <!-- small cart end -->
+
+    <!--    <div class="header-2">
             <nav class="navbr">
                 <a href="index.html">SHONEN</a>
                 <a href="#shojo">SHOJO</a>
@@ -96,7 +94,7 @@
                 <a href="#josei">JOSEI</a>
                 <a href="#isekai">ISEKAI</a>
             </nav>
-        </div>
+        </div> -->
 
     </header>
 
@@ -170,211 +168,14 @@
                     </div>
                     <div class="content">
                         <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
+                        <div class="price">10000 FCFA </div>
                         <a href="" class="btn">add to cart</a>
                     </div>
                 </div>
 
             </div>
 
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid-item">
-
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA <span>15000 FCFA</span></div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
-
-            </div>
-
+            
         </div>
 
 
@@ -435,30 +236,19 @@
 
             <div class="box">
                 <h3>Information</h3>
-                <a href="#"><i class="fa fa-angle-down"></i>gdsfhbsdfjk</a>
-                <a href="#"><i class="fa fa-angle-down"></i>asfasdfsadf</a>
-                <a href="#"><i class="fa fa-angle-down"></i>sdfsadfsdf</a>
-                <a href="#"><i class="fa fa-angle-down"></i>dsfasdfs</a>
-                <a href="#"><i class="fa fa-angle-down"></i>sdfasdfasdf</a>
-                <a href="#"><i class="fa fa-angle-down"></i>sdfasdfsa</a>
-            </div>
-
-            <div class="box">
-                <h3>Customer Service</h3>
-                <a href="#"><i class="fa fa-angle-down"></i>gdsfhbsdfjk</a>
-                <a href="#"><i class="fa fa-angle-down"></i>asfasdfsadf</a>
-                <a href="#"><i class="fa fa-angle-down"></i>sdfsadfsdf</a>
+                <a href="#"><i class="fa fa-angle-down"></i><span id="name"></span></a>
+                <a href="#"><i class="fa fa-angle-down"></i>email</a>
+                <a href="#"><i class="fa fa-angle-down"></i>contact</a>
             </div>
 
             <div class="box">
                 <h3>My Account</h3>
-                <a href="#"><i class="fa fa-angle-down"></i>gdsfhbsdfjk</a>
-                <a href="#"><i class="fa fa-angle-down"></i>asfasdfsadf</a>
+                <a href="#"><i class="fa fa-angle-down"></i>site web</a>
             </div>
 
             <div class="box">
                 <h3>About Us</h3>
-                <a href="#"><i class="fa fa-angle-down"></i>gdsfhbsdfjk</a>
+                <a href="#"><i class="fa fa-angle-down"></i>about us</a>
             </div>
 
         </div>
@@ -480,7 +270,7 @@
 
     <!-- custom js file link -->
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->

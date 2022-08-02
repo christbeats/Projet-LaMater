@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookly</title>
-
     <link rel="stylesheet" href="css/style.css">
+    <title>Bookly</title>
 
     <!-- swiper cdn link -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" /> -->
@@ -28,7 +27,7 @@
     <header class="header">
 
         <div class="header-1">
-            <a href="accueil.html" class="logo"><i class="fas fa-book"></i>Bookly</a>
+            <a href="#" class="logo"><i class="fas fa-book"></i>Bookly</a>
 
             <form action="" class="search-form">
                 <input type="search" name="" placeholder="search here..." id="search-box">
@@ -43,9 +42,36 @@
                 <div class="options-container">
                     <div class="option">
                         <input type="radio" class="radio" id="shonen" name="category">
-                        <label for="shonen"> <a href="index.html">Shonen</a> </label>
+                        <label for="shonen">Shonen</label>
                     </div>
-                    
+                    <div class="option">
+                        <input type="radio" class="radio" id="shojo" name="category">
+                        <label for="shojo">Shojo</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="seinen" name="category">
+                        <label for="seinen">Seinen</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="josei" name="category">
+                        <label for="josei">Josei</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="isekai" name="category">
+                        <label for="isekai">Isekai</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="isekai" name="category">
+                        <label for="isekai">Isekai</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="isekai" name="category">
+                        <label for="isekai">Isekai</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="isekai" name="category">
+                        <label for="isekai">Isekai</label>
+                    </div>
                 </div>
 
                 <div class="selected"> Categorie </div>
@@ -68,7 +94,7 @@
 
 
 
-     <!--   <div class="header-2">
+        <div class="header-2">
             <nav class="navbr">
                 <a href="index.html">SHONEN</a>
                 <a href="#shojo">SHOJO</a>
@@ -76,34 +102,11 @@
                 <a href="#josei">JOSEI</a>
                 <a href="#isekai">ISEKAI</a>
             </nav>
-        </div> --> 
+        </div>
 
     </header>
 
     <!-- header section end -->
-
-    <!-- small cart end -->
-
-    <div class="cart hidden">
-        <div class="cart-header">cart</div>
-        <div class="products-in-cart">
-            <div class="item">
-                <img src="image/img1.1.jpg" alt="product 1 thumb">
-                <div class="details">
-                    <div class="product-name">featured book</div>
-                    <div class="price-group">
-                        <div class="price">10000FCFA</div>
-                        <div class="count">* 3</div>
-                        <div class="total-amount">30000FCFA</div>
-                    </div>
-                </div>
-                <div id="delete-btn" class="fa fa-trash"></div>
-            </div>
-        </div>
-        <div class="msg-empty hidden">Your cart is empty</div>
-        <div class="checkout">checkout</div>
-    </div>
-    <!-- small cart end -->
 
     <!-- side navbar start -->
     <!-- small cart end -->
@@ -179,40 +182,50 @@
         </form>
     </div>
 
-    <!-- featured section start -->
 
-    <section id="all" class="all">
 
-        <h1 class="heading"> <span>ALL PRODUCTS</span> </h1>
 
-        <div class="grille">
+    <!-- simple produit start -->
 
-          <!--  <div class="grid-item">
 
-                <div class="box">
-                    <div class="image">
-                        <img src="image/img1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>featured books</h3>
-                        <div class="price">10000 FCFA</div>
-                        <a href="" class="btn">add to cart</a>
-                    </div>
-                </div>
+    <div class="content">
 
-            </div> -->
+        <!-- Lightbox -->
+        <section class="lightbox">
+            <img class="product-hero" src="image/img1.jpg" alt="icon product">
+            <div id="previous arrow" class="fa fa-chevron-left"></div>
+            <div id="next arrow" class="fa fa-chevron-right"></div>
+        </section>
 
+    </div>
+
+    <section class="product">
+        <div class="company-name">Bookly</div>
+        <div class="title">Featured Book</div>
+        <div class="descrption">
+            fbsjkfhskdbjfugshdfjbsjdhfisbdfksjdflkjsdlmfkbsidof gudishghsdbjg hughiodsjfgbdsfiogos fhgsodfkngbsdifgbs odifgjdskgndsfgjdklfgndkgsdfgndslkfgnddgkndfgdkgndfkgnsknnjns jsdfnkgndskflgdfgklnf d,nf hiueqvgiudshuvh dgfjhdsfghdsjfgsdjfghsdgdsgdgygsdhfudgshsgsdfghsdjfgh.
         </div>
+        <div class="price-wrapper">
+            <div class="group">
+                <div class="price">5000FCFA</div>
+                <div class="discount">50%</div>
+            </div>
+            <div class="old-price">10000FCFA</div>
+        </div>
+        <div class="count-btn-group">
+            <div class="counter-wrapper">
+                <div id="btnMinus" class="fa fa-minus"></div>
+                <div class="counter">1</div>
+                <div id="btnPlus" class="fa fa-plus"></div>
+            </div>
 
-
-
+            <div class="btn">
+                <p>Add to cart</p>
+            </div>
+        </div>
     </section>
 
-    <!-- featured section start -->
-
-
-
-
+    <!-- simple produit end -->
 
 
 
@@ -262,19 +275,30 @@
 
             <div class="box">
                 <h3>Information</h3>
-                <a href="#"><i class="fa fa-angle-down"></i><span id="name"></span></a>
-                <a href="#"><i class="fa fa-angle-down"></i><span id="email"></span></a>
-                <a href="#"><i class="fa fa-angle-down"></i><span id="phone"></span></a>
+                <a href="#"><i class="fa fa-angle-down"></i>gdsfhbsdfjk</a>
+                <a href="#"><i class="fa fa-angle-down"></i>asfasdfsadf</a>
+                <a href="#"><i class="fa fa-angle-down"></i>sdfsadfsdf</a>
+                <a href="#"><i class="fa fa-angle-down"></i>dsfasdfs</a>
+                <a href="#"><i class="fa fa-angle-down"></i>sdfasdfasdf</a>
+                <a href="#"><i class="fa fa-angle-down"></i>sdfasdfsa</a>
+            </div>
+
+            <div class="box">
+                <h3>Customer Service</h3>
+                <a href="#"><i class="fa fa-angle-down"></i>gdsfhbsdfjk</a>
+                <a href="#"><i class="fa fa-angle-down"></i>asfasdfsadf</a>
+                <a href="#"><i class="fa fa-angle-down"></i>sdfsadfsdf</a>
             </div>
 
             <div class="box">
                 <h3>My Account</h3>
-                <a href="#"><i class="fa fa-angle-down"></i><span id="website"></span></a>
+                <a href="#"><i class="fa fa-angle-down"></i>gdsfhbsdfjk</a>
+                <a href="#"><i class="fa fa-angle-down"></i>asfasdfsadf</a>
             </div>
 
             <div class="box">
                 <h3>About Us</h3>
-                <a href="#"><i class="fa fa-angle-down"></i><span id="description"></span></a>
+                <a href="#"><i class="fa fa-angle-down"></i>gdsfhbsdfjk</a>
             </div>
 
         </div>
@@ -297,10 +321,6 @@
     <!-- custom js file link -->
 
     <script src="js/script.js"></script>
-    <script src="js/product.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
-
 
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
