@@ -24,17 +24,17 @@ document.querySelector('#close-register-btn').onclick = () => {
     registerForm.classList.remove('active');
 }
 
-window.onscroll = () => {
+// window.onscroll = () => {
 
-    searchForm.classList.remove('active');
+//     searchForm.classList.remove('active');
 
-    if (window.scrollY > 80) {
-        document.querySelector('.header .header-2').classList.add('active');
-    } else {
-        document.querySelector('.header .header-2').classList.remove('active');
-    }
+//     if (window.scrollY > 80) {
+//         document.querySelector('.header .header-2').classList.add('active');
+//     } else {
+//         document.querySelector('.header .header-2').classList.remove('active');
+//     }
 
-}
+// }
 
 // window.onload = () => {
 

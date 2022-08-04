@@ -1,4 +1,4 @@
-const company = "https://api.genuka.com/2021-10/companies/details/535"
+const company = "https://api.genuka.com/2021-10/companies/details/2"
 
 fetch(company)
     .then((data) => {
