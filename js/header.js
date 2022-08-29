@@ -7,9 +7,13 @@ fetch(company)
 
     }).then((completedata) => {
 
-        console.table(completedata);
-        // document.getElementById('root').
-        // innerHTML=completedata.logo
+        console.log(completedata.name);
+        document.getElementById('name').
+        innerHTML=completedata.name
+
+        console.log(completedata.logo);
+        document.getElementById('log').
+        innerHTML=completedata.logo
 
     })
     

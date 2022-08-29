@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
     <title>Bookly</title>
 
     <!-- swiper cdn link -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
     <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -17,6 +17,12 @@
     <!-- custom css file link -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
     <!-- <link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="css/style.css">
+
 
 </head>
 
@@ -27,57 +33,28 @@
     <header class="header">
 
         <div class="header-1">
-            <a href="#" class="logo"><i class="fas fa-book"></i>Bookly</a>
+            <a href="accueil.html" class="logo"><span id="logo"></span><span id="name"></span></a>
 
             <form action="" class="search-form">
                 <input type="search" name="" placeholder="search here..." id="search-box">
                 <label for="search-box" class="fas fa-search"></label>
             </form>
 
-
             <!-- select start -->
 
             <div class="select-box">
 
                 <div class="options-container">
-                    <div class="option">
+                    <!-- <a href="index.html"><div class="option">
                         <input type="radio" class="radio" id="shonen" name="category">
                         <label for="shonen">Shonen</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="shojo" name="category">
-                        <label for="shojo">Shojo</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="seinen" name="category">
-                        <label for="seinen">Seinen</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="josei" name="category">
-                        <label for="josei">Josei</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="isekai" name="category">
-                        <label for="isekai">Isekai</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="isekai" name="category">
-                        <label for="isekai">Isekai</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="isekai" name="category">
-                        <label for="isekai">Isekai</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" class="radio" id="isekai" name="category">
-                        <label for="isekai">Isekai</label>
-                    </div>
+                    </div></a> -->
+
                 </div>
 
                 <div class="selected"> Categorie </div>
 
             </div>
-
             <!-- select end -->
 
             <div class="icons">
@@ -85,76 +62,42 @@
                 <div id="register-btn" class="fa-solid fa-pencil"></div>
                 <div id="login-btn" class="fas fa-user"></div>
                 <div id="cart-btn" class="fas fa-shopping-cart">
-                    <div class="cart-count">3</div>
+                    <div class="cart-count hidden">3</div>
                 </div>
             </div>
 
         </div>
+
         <!-- small cart end -->
 
         <div class="cart hidden">
-            <div class="cart-header">cart</div>
+            <div class="cart-header">Cart</div>
             <div class="products-in-cart">
-                <div class="item">
-                    <img src="image/img1.1.jpg" alt="product 1 thumb">
+                <!-- <div class="item">
+                    <img class="product-img" src="image/image-product-1-thumbnail.jpg" alt="product 1 thumb">
                     <div class="details">
-                        <div class="product-name">featured book</div>
+                        <div class="product-name">Autumn Limited Edition...</div>
                         <div class="price-group">
-                            <div class="price">10000FCFA</div>
+                            <div class="price">20000FCFA</div> x
                             <div class="count">3</div>
-                            <div class="total-amount">30000FCFA</div>
+                            <div class="total-amount">60000FCFA</div>
                         </div>
                     </div>
-                    <div id="delete-btn" class="fa fa-trash"></div>
-                </div>
+                    <img id="btnDelete" src="image/icon-delete.svg" alt="icon delete">
+                </div>  -->
             </div>
-            <div class="msg-empty hidden">Your cart is empty</div>
-            <div class="checkout">checkout</div>
+            <div class="msg-empty">Your cart is empty.</div>
+            <div class="checkout hidden">Checkout</div>
         </div>
+
         <!-- small cart end -->
 
-
-        <div class="header-2">
-            <nav class="navbr">
-                <a href="index.html">SHONEN</a>
-                <a href="#shojo">SHOJO</a>
-                <a href="#seinen">SEINEN</a>
-                <a href="#josei">JOSEI</a>
-                <a href="#isekai">ISEKAI</a>
-            </nav>
-        </div>
 
 
     </header>
 
     <!-- header section end -->
 
-    <!-- small cart end -->
-
-    <div class="cart hidden">
-        <div class="cart-header">cart</div>
-        <div class="products-in-cart">
-            <div class="item">
-                <img src="image/img1.1.jpg" alt="product 1 thumb">
-                <div class="details">
-                    <div class="product-name">featured book</div>
-                    <div class="price-group">
-                        <div class="price">10000FCFA</div>
-                        <div class="count">3</div>
-                        <div class="total-amount">30000FCFA</div>
-                    </div>
-                </div>
-                <div id="delete-btn" class="fa fa-trash"></div>
-            </div>
-        </div>
-        <div class="msg-empty hidden">Your cart is empty</div>
-        <div class="checkout">checkout</div>
-    </div>
-    <!-- small cart end -->
-
-    <!-- side navbar start -->
-
-    <!-- side navbar start -->
 
     <!-- login form -->
 
@@ -204,37 +147,73 @@
         </form>
     </div>
 
+    <!-- featured section start -->
 
 
+    <div class="content">
 
+        <!-- Lightbox -->
+        <section class="lightbox">
+            <img class="product-hero" src="image/image-product-1.jpg" alt="image product">
+            <div class="previous arrow">
+                <img src="image/icon-previous.svg" alt="icon previous">
+            </div>
+            <div class="next arrow">
+                <img src="image/icon-next.svg" alt="icon next">
+            </div>
+            <div class="thumb-gallery">
+                <div class="pic active">
+                    <img src="image/image-product-1-thumbnail.jpg" alt="thumb-1">
+                </div>
+                <div class="pic">
+                    <img src="image/image-product-2-thumbnail.jpg" alt="thumb-2">
+                </div>
+                <div class="pic">
+                    <img src="image/image-product-3-thumbnail.jpg" alt="thumb-3">
+                </div>
+                <div class="pic">
+                    <img src="image/image-product-4-thumbnail.jpg" alt="thumb-4">
+                </div>
+            </div>
+        </section>
 
+        <!-- Product -->
+        <section class="product">
+            <div class="company-name">BOOKLY</div>
+            <div class="title">FEATURES BOOKS</div>
+            <div class="description">
+                These low-profile sneakers are your perfect casual wear companion.
+                Featuring a durable rubber outer sole, they'll withstand everything 
+                the weather can offer.
+            </div>
+            <div class="price-wrapper">
+                <div class="group">
+                    <div class="price">20000FCFA</div>
+                </div>
+            </div>
 
+            <div class="count-btn-group">
+                <div class="counter-wrapper">
+                    <img id="btnMinus" src="image/icon-minus.svg" alt="icon minus">
+                    <div class="counter">1</div>
+                    <img id="btnPlus" src="image/icon-plus.svg" alt="icon plus">
+                </div>
 
+                <div class="btn">
+                    <img src="image/icon-cart.svg" alt="icon cart">
+                    <p>Add to cart</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
+    <div class="overlay hidden">
+        <div class="btnClose">
+            <img id="btnOverlayClose" src="image/icon-close.svg" alt="lightbox close">
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
 
 
@@ -252,30 +231,19 @@
 
             <div class="box">
                 <h3>Information</h3>
-                <a href="#"><i class="fa fa-angle-down"></i>gdsfhbsdfjk</a>
-                <a href="#"><i class="fa fa-angle-down"></i>asfasdfsadf</a>
-                <a href="#"><i class="fa fa-angle-down"></i>sdfsadfsdf</a>
-                <a href="#"><i class="fa fa-angle-down"></i>dsfasdfs</a>
-                <a href="#"><i class="fa fa-angle-down"></i>sdfasdfasdf</a>
-                <a href="#"><i class="fa fa-angle-down"></i>sdfasdfsa</a>
-            </div>
-
-            <div class="box">
-                <h3>Customer Service</h3>
-                <a href="#"><i class="fa fa-angle-down"></i>gdsfhbsdfjk</a>
-                <a href="#"><i class="fa fa-angle-down"></i>asfasdfsadf</a>
-                <a href="#"><i class="fa fa-angle-down"></i>sdfsadfsdf</a>
+                <a href="#"><i class="fa fa-angle-down"></i><span id="name"></span></a>
+                <a href="#"><i class="fa fa-angle-down"></i><span id="email"></span></a>
+                <a href="#"><i class="fa fa-angle-down"></i><span id="phone"></span></a>
             </div>
 
             <div class="box">
                 <h3>My Account</h3>
-                <a href="#"><i class="fa fa-angle-down"></i>gdsfhbsdfjk</a>
-                <a href="#"><i class="fa fa-angle-down"></i>asfasdfsadf</a>
+                <a href="#"><i class="fa fa-angle-down"></i><span id="website"></span></a>
             </div>
 
             <div class="box">
                 <h3>About Us</h3>
-                <a href="#"><i class="fa fa-angle-down"></i>gdsfhbsdfjk</a>
+                <a href="#"><i class="fa fa-angle-down"></i><span id="description"></span></a>
             </div>
 
         </div>
@@ -298,6 +266,12 @@
     <!-- custom js file link -->
 
     <script src="js/script.js"></script>
+    <!-- <script src="js/SingleProduct.js"></script> -->
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/categorie.js"></script>
+    <script src="js/connexion.js"></script>
+    <!-- <script src="js/app.js"></script> -->
 
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->

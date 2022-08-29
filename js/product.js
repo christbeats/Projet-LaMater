@@ -8,6 +8,7 @@ fetch(products)
     }).then((completedata) => {
 
         let data1 = "";
+       
         completedata.data.map((values) => {
             
             data1 += `<div class="grid-item">
@@ -23,6 +24,7 @@ fetch(products)
             </div>
             </div>` 
         });
+
         document.querySelectorAll('.grille')[0].innerHTML = data1;
 
     }).catch((err) => {

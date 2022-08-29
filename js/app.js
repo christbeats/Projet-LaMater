@@ -1,54 +1,9 @@
-
-
-searchForm = document.querySelector('.search-form')
-
-document.querySelector('#search-btn').onclick = () => {
-    searchForm.classList.toggle('active');
-}
-
-let loginForm = document.querySelector('.login-form-container');
-
-document.querySelector('#login-btn').onclick = () => {
-    loginForm.classList.toggle('active');
-}
-
-document.querySelector('#close-login-btn').onclick = () => {
-    loginForm.classList.remove('active');
-}
-
-let registerForm = document.querySelector('.register-form-container');
-
-document.querySelector('#register-btn').onclick = () => {
-    registerForm.classList.toggle('active');
-}
-
-document.querySelector('#close-register-btn').onclick = () => {
-    registerForm.classList.remove('active');
-}
-
-
-
-const selected = document.querySelector(".selected");
-const optionsContainer = document.querySelector(".options-container");
-
-const optionsList = document.querySelectorAll(".option");
-
-selected.addEventListener("click", () => {
-    optionsContainer.classList.toggle("active");
-});
-
-optionsList.forEach(o => {
-    o.addEventListener("click", () => {
-        selected.innerHTML = o.querySelector("label").innerHTML;
-        optionsContainer.classList.remove("active");
-    });
-});
-
-
-
+const menu = document.querySelector('.menu');
+const btnHamburger = document.querySelector('.hamburger');
+const btnMenuClose = document.querySelector('#btnMenuClose');
 
 const cart = document.querySelector('.cart');
-const btnCart = document.querySelector('#cart-btn');
+const btnCart = document.querySelector('.cart-btn');
 
 const btnPlus = document.querySelector('#btnPlus');
 const btnMinus = document.querySelector('#btnMinus');
@@ -77,8 +32,9 @@ let lightboxHero;
 //Numerical Variables
 let productCounterValue = 1;
 let productsInCart = 0;
-let price = 40000
+let price = 20000
 let discount = 0.5;
+
 
 
 btnCart.addEventListener('click', openCart);
@@ -99,6 +55,13 @@ heroImg.addEventListener('click', onHeroImgClick);
 
 
 
+function onHamburgerClick() {
+    menu.classList.remove('hidden');
+}
+
+function onBtnMenuCloseClick() {
+    menu.classList.add('hidden');
+}
 
 function openCart() {
     cart.classList.toggle('hidden');
@@ -157,7 +120,7 @@ function getCurrentImageIndex() {
 }
 
 function setHeroImage(imageIndex) {
-    heroImg.src = `./images/image-product-${imageIndex}.jpg`;
+    heroImg.src = `image/image-product-${imageIndex}.jpg`;
     //images are not sync
     gallery.forEach(img => {
         img.classList.remove('active');
@@ -173,7 +136,7 @@ function addToCart() {
     <div class="item">
         <img class="product-img" src="image/image-product-1-thumbnail.jpg" alt="product 1 thumb">
         <div class="details">
-            <div class="product-name">Featured Book</div>
+            <div class="product-name">Autumn Limited Edition...</div>
             <div class="price-group">
                 <div class="price">$${(price*discount).toFixed(2)}</div> x
                 <div class="count">${productsInCart}</div>

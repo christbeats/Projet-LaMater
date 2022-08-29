@@ -1,31 +1,27 @@
 const collections = "https://api.genuka.com/2021-10/companies/2/collections"
 
 
-async function category() {
-    const response = await fetch(collections)
-    const data = await response.json()
-    console.log(data)
+fetch(collections)
+.then(function(response){
 
-    createCollectionList(data.message)
-}
+    return response.json()
 
-category()
+}).then((completedata) => {
 
-function createCollectionList(collectionList){
-
-    let data2 = "";
-    createCollectionList.data.map((collection) => {
+        let data1 = "";
+        completedata.data.map((values) => {
             
-            data2 =`<div class="options-container">
+            data1 += `<a href="index.html">
             <div class="option">
                 <input type="radio" class="radio" id="shonen" name="category">
-                <label for="shonen"> <a href="index.html">${collection.name}</a> </label>
-            </div> 
-            
-        </div>
-        <div class="selected"> Categorie </div> `
+                <label for="shonen">${values.name}</label>
+            </div>
+        </a>` 
         });
+        document.querySelectorAll('.options-container')[0].innerHTML = data1;
+
+        console.log(completedata)
+
+    })
 
 
-    document.querySelectorAll('.select-box')[0].innerHTML = data2;
-    }
