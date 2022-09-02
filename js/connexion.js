@@ -15,7 +15,7 @@ form.addEventListener('submit', function(e) {
 
     fetch(register, {
         method: 'POST',
-        body:JSON.stringify({
+        user:JSON.stringify({
             email: email,
             tel: tel,
             firstname: firstname,

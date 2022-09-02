@@ -23,7 +23,7 @@ fetch(SingleCollection)
             </div>
             <div class="content">
             <h3>${values.name}</h3>
-            <div class="price">${values.price}</div>
+            <div class="price">${values.price}FCFA</div>
             <a href="" class="btn">add to cart</a>
             </div>
             </div>
@@ -38,26 +38,7 @@ fetch(SingleCollection)
         console.log(err);
     })
 
-fetch(SingleCollection)
-    .then((data) => {
 
-        return data.json();
-
-    }).then((completedata) => {
-
-
-        let data3 = "";
-    
-        completedata.collection.map((donnee) => {
-            
-                data3 = `<h1 class="heading"> <span>${donnee.name}</span> </h1>`
-        });
-    
-        document.querySelectorAll('.shonen').innerHTML = data3;
-    
-    }).catch((err) => {
-            console.log(err);
-    })   
 
 
 

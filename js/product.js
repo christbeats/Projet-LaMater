@@ -19,7 +19,7 @@ fetch(products)
             <div class="content">
             <h3>${values.name}</h3>
             <div class="price">${values.price}</div>
-            <a href="" class="btn">add to cart</a>
+            <a href="cart.html" class="btn">add to cart</a>
             </div>
             </div>
             </div>` 
