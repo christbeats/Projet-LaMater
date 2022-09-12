@@ -1,6 +1,8 @@
 const SingleCollection = "https://api.genuka.com/2021-10/companies/2/collections/87"
 
 
+
+
 fetch(SingleCollection)
     .then((data) => {
 

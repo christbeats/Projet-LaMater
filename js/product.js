@@ -1,5 +1,7 @@
 const products = "https://api.genuka.com/2021-10/companies/2/products"
 
+const product_field = document.querySelectorAll('.grid-item ')
+
 fetch(products)
     .then((data) => {
 
@@ -11,7 +13,7 @@ fetch(products)
        
         completedata.data.map((values) => {
             
-            data1 += `<div class="grid-item">
+            data1 += `<div class="grid-item ">
             
             <div class="box">
             <div class="image">
@@ -28,7 +30,13 @@ fetch(products)
 
         document.querySelectorAll('.grille')[0].innerHTML = data1;
 
+
     }).catch((err) => {
         console.log(err);
     })
     
+    product_field.forEach(item => {
+        
+             console.log(item)
+        
+      })

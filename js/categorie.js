@@ -1,29 +1,5 @@
 const collections = "https://api.genuka.com/2021-10/companies/2/collections"
 
-
-// fetch(collections)
-// .then(function(response){
-
-//     return response.json()
-
-// }).then((completedata) => {
-
-//         let data1 = "";
-//         completedata.data.map((values) => {
-            
-//             data1 += `<a href="index.html">
-//             <div class="option">
-//                 <input type="radio" class="radio" id="shonen" name="category">
-//                 <label for="shonen">${values.name}</label>
-//             </div>
-//         </a>` 
-//         });
-//         document.querySelectorAll('.options-container')[0].innerHTML = data1;
-
-//         console.log(completedata)
-
-//     })
-
 async function start(){
     const response = await fetch(collections)
     const completedata = await response.json()
@@ -71,7 +47,7 @@ categoryName.forEach(elt => {
         
             data2 += `
 
-            <div class="grid-item">
+            <div class="grid-item grid-item-details">
             
             <div class="box">
             <div class="image">
@@ -87,14 +63,13 @@ categoryName.forEach(elt => {
  
              </div> `
         });
-        console.log(data2)
 
         if(data2 == ''){
             document.querySelector('#category_field').innerHTML= "Categorie  " + elt.querySelector("label").innerHTML
             document.querySelectorAll('.grille')[0].innerHTML = 'AUCUNS PRODUITS DANS CETTE CATEGORIE';
             document.querySelectorAll('.grille')[0].style.fontSize = "5rem"
             document.querySelectorAll('.grille')[0].style.display = "block"
-            document.querySelectorAll('.grille')[0].style.margin = "5rem 35rem"
+            document.querySelectorAll('.grille')[0].style.margin = "5rem 3rem"
         }else{
             document.querySelectorAll('.grille')[0].style.display = "grid"
             document.querySelectorAll('.grille')[0].innerHTML = data2;
