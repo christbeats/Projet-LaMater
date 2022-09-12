@@ -16,7 +16,7 @@ fetch(SingleCollection)
             data2 += `
 
             <div class="grid-item">
-
+            
             <div class="box">
             <div class="image">
             <img src=${values.medias.length == 0? 'image/none.jpg' : values.medias[0].link } alt="img">

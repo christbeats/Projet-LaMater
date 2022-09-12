@@ -1,30 +1,48 @@
 
 
+
+let user = JSON.parse(localStorage.getItem("user"))?.user;
+
 searchForm = document.querySelector('.search-form')
 
 document.querySelector('#search-btn').onclick = () => {
-    searchForm.classList.toggle('active');
+searchForm.classList.toggle('active');
 }
 
 let loginForm = document.querySelector('.login-form-container');
 
 document.querySelector('#login-btn').onclick = () => {
-    loginForm.classList.toggle('active');
+loginForm.classList.toggle('active');
 }
 
 document.querySelector('#close-login-btn').onclick = () => {
-    loginForm.classList.remove('active');
+loginForm.classList.remove('active');
 }
 
 let registerForm = document.querySelector('.register-form-container');
 
 document.querySelector('#register-btn').onclick = () => {
-    registerForm.classList.toggle('active');
+registerForm.classList.toggle('active');
 }
 
 document.querySelector('#close-register-btn').onclick = () => {
-    registerForm.classList.remove('active');
+registerForm.classList.remove('active');
 }
+console.log(user)
+if((user == null) || (user == undefined)){
+    document.querySelector("#logout-btn").style.display = "none"
+   
+}else{
+    document.querySelector("#logout-btn").style.display = "block"
+    document.querySelector("#register-btn").style.display = "none"
+    document.querySelector("#login-btn").style.display = "none"
+    swal(`bienvenue ${ user.last_name}`)
+}
+
+     document.querySelector('#logout-btn').addEventListener('click', (e)=>{
+     localStorage.clear()
+     location.reload()
+     })
 
 
 
@@ -72,6 +90,7 @@ const checkout = document.querySelector('.checkout');
 const overlay = document.querySelector('.overlay');
 const lightbox = document.querySelector('.lightbox');
 
+
 let lightboxGallery;
 let lightboxHero;
 
@@ -83,13 +102,15 @@ let price = 40000
 let discount = 0.5;
 
 
+
+
 btnCart.addEventListener('click', openCart);
 
 btnPlus.addEventListener('click', productCounterPlus);
 btnMinus.addEventListener('click', productCounterMinus);
 
 gallery.forEach(img => {
-    img.addEventListener('click', onThumbClick);
+img.addEventListener('click', onThumbClick);
 });
 
 btnNext.addEventListener('click', handleBtnClickNext);
@@ -103,221 +124,222 @@ heroImg.addEventListener('click', onHeroImgClick);
 
 
 function openCart() {
-    cart.classList.toggle('hidden');
+cart.classList.toggle('hidden');
 }
 
 function productCounterPlus() {
-    //console.log(productCounterValue);
-    setProductCounter(1);
+//console.log(productCounterValue);
+setProductCounter(1);
 }
 
 function productCounterMinus() {
-    setProductCounter(-1);
+setProductCounter(-1);
 }
 
 function setProductCounter(value) {
-    if ((productCounterValue + value) > 0) {
-        productCounterValue += value;
-        productCounter.innerHTML = productCounterValue;
-    }
-    //console.log(value);
+if ((productCounterValue + value) > 0) {
+    productCounterValue += value;
+    productCounter.innerHTML = productCounterValue;
+}
+//console.log(value);
 }
 
 
 function onThumbClick(event) {
-    //clear active state for all thumbnails
-    gallery.forEach(img => {
-        img.classList.remove('active');
-    });
-    //set active thumbnail
-    event.target.parentElement.classList.add('active');
-    //update hero image
-    heroImg.src = event.target.src.replace('-thumbnail', '');
+//clear active state for all thumbnails
+gallery.forEach(img => {
+    img.classList.remove('active');
+});
+//set active thumbnail
+event.target.parentElement.classList.add('active');
+//update hero image
+heroImg.src = event.target.src.replace('-thumbnail', '');
 }
 
 function handleBtnClickNext() {
-    let imageIndex = getCurrentImageIndex();
-    imageIndex++;
-    if (imageIndex > 4) {
-        imageIndex = 1;
-    }
-    setHeroImage(imageIndex);
+let imageIndex = getCurrentImageIndex();
+imageIndex++;
+if (imageIndex > 4) {
+    imageIndex = 1;
+}
+setHeroImage(imageIndex);
 }
 
 function handleBtnClickPrevious() {
-    let imageIndex = getCurrentImageIndex();
-    imageIndex--;
-    if (imageIndex < 1) {
-        imageIndex = 4;
-    }
-    setHeroImage(imageIndex);
+let imageIndex = getCurrentImageIndex();
+imageIndex--;
+if (imageIndex < 1) {
+    imageIndex = 4;
+}
+setHeroImage(imageIndex);
 }
 
 function getCurrentImageIndex() {
-    const imageIndex = parseInt(heroImg.src.split('\\').pop().split('/').pop().replace('.jpg', '').replace('image-product-', ''));
-    return imageIndex;
+const imageIndex = parseInt(heroImg.src.split('\\').pop().split('/').pop().replace('.jpg', '').replace('image-product-', ''));
+return imageIndex;
 }
 
 function setHeroImage(imageIndex) {
-    heroImg.src = `./images/image-product-${imageIndex}.jpg`;
-    //images are not sync
-    gallery.forEach(img => {
-        img.classList.remove('active');
-    });
-    //set active thumbnail
-    gallery[imageIndex-1].classList.add('active');
+heroImg.src = `./images/image-product-${imageIndex}.jpg`;
+//images are not sync
+gallery.forEach(img => {
+    img.classList.remove('active');
+});
+//set active thumbnail
+gallery[imageIndex-1].classList.add('active');
 }
 
 function addToCart() {
-    productsInCart += productCounterValue;
+productsInCart += productCounterValue;
 
-    const productHTMLElement = `
-    <div class="item">
-        <img class="product-img" src="image/image-product-1-thumbnail.jpg" alt="product 1 thumb">
-        <div class="details">
-            <div class="product-name">Featured Book</div>
-            <div class="price-group">
-                <div class="price">$${(price*discount).toFixed(2)}</div> x
-                <div class="count">${productsInCart}</div>
-                <div class="total-amount">$${(price*discount*productsInCart).toFixed(2)}</div>
-        </div>
-        </div>
-        <img id="btnDelete" src="image/icon-delete.svg" alt="icon delete">
+const productHTMLElement = `
+<div class="item">
+    <img class="product-img" src="image/image-product-1-thumbnail.jpg" alt="product 1 thumb">
+    <div class="details">
+        <div class="product-name">Featured Book</div>
+        <div class="price-group">
+            <div class="price">$${(price*discount).toFixed(2)}</div> x
+            <div class="count">${productsInCart}</div>
+            <div class="total-amount">$${(price*discount*productsInCart).toFixed(2)}</div>
     </div>
-    `;
+    </div>
+    <img id="btnDelete" src="image/icon-delete.svg" alt="icon delete">
+</div>
+`;
 
-    productInShoppingCart.innerHTML = productHTMLElement;
+productInShoppingCart.innerHTML = productHTMLElement;
 
-    updateCart();
+updateCart();
 
-    const btnDelete = document.querySelector('#btnDelete');
-    btnDelete.addEventListener('click', onBtnDeleteClick);
-    //console.log(productsInCart);
+const btnDelete = document.querySelector('#btnDelete');
+btnDelete.addEventListener('click', onBtnDeleteClick);
+//console.log(productsInCart);
 }
 
 function updateCart() {
-    updateCartIcon();
-    updateMsgEmpty();
-    updateCheckoutButton();
+updateCartIcon();
+updateMsgEmpty();
+updateCheckoutButton();
 }
 
 function updateCartIcon() {
-    cartCount.textContent = productsInCart;
-    if (productsInCart == 0) {
-        if (!cartCount.classList.contains('hidden')) {
-            cartCount.classList.add('hidden');
-        }
-    } else {
-        cartCount.classList.remove('hidden');
+cartCount.textContent = productsInCart;
+if (productsInCart == 0) {
+    if (!cartCount.classList.contains('hidden')) {
+        cartCount.classList.add('hidden');
     }
+} else {
+    cartCount.classList.remove('hidden');
+}
 }
 
 function updateMsgEmpty() {
-    if (productsInCart == 0) {
-        if (msgEmpty.classList.contains('hidden')) {
-            msgEmpty.classList.remove('hidden');
-        }
-    } else {
-        if (!msgEmpty.classList.contains('hidden')){
-            msgEmpty.classList.add('hidden');
-        }
+if (productsInCart == 0) {
+    if (msgEmpty.classList.contains('hidden')) {
+        msgEmpty.classList.remove('hidden');
     }
+} else {
+    if (!msgEmpty.classList.contains('hidden')){
+        msgEmpty.classList.add('hidden');
+    }
+}
 
 }
 
 function updateCheckoutButton() {
-    if (productsInCart == 0) {
-        if (!checkout.classList.contains('hidden')) {
-            checkout.classList.add('hidden');
-        }
-    } else {
-        checkout.classList.remove('hidden');
+if (productsInCart == 0) {
+    if (!checkout.classList.contains('hidden')) {
+        checkout.classList.add('hidden');
     }
+} else {
+    checkout.classList.remove('hidden');
+}
 }
 
 function onBtnDeleteClick() {
-    productsInCart--;
-    updateCart();
+productsInCart--;
+updateCart();
 
-    const el = document.querySelector('.count');
-    const totalAmount = document.querySelector('.total-amount');
-    el.innerHTML = productsInCart;
-    totalAmount.innerHTML = `$${(price*discount*productsInCart).toFixed(2)}`;
+const el = document.querySelector('.count');
+const totalAmount = document.querySelector('.total-amount');
+el.innerHTML = productsInCart;
+totalAmount.innerHTML = `$${(price*discount*productsInCart).toFixed(2)}`;
 
-    if (productsInCart == 0) {
-        productInShoppingCart.innerHTML = '';
-    }
+if (productsInCart == 0) {
+    productInShoppingCart.innerHTML = '';
+}
 }
 
 function onHeroImgClick() {
-    if (window.innerWidth >= 1440) {
-        if (overlay.childElementCount == 1) {
-            const newNode = lightbox.cloneNode(true);
-            overlay.appendChild(newNode);
+if (window.innerWidth >= 1440) {
+    if (overlay.childElementCount == 1) {
+        const newNode = lightbox.cloneNode(true);
+        overlay.appendChild(newNode);
 
-            const btnOverlayClose = document.querySelector('#btnOverlayClose');
-            btnOverlayClose.addEventListener('click', onBtnOverlayClose);
+        const btnOverlayClose = document.querySelector('#btnOverlayClose');
+        btnOverlayClose.addEventListener('click', onBtnOverlayClose);
 
-            lightboxGallery = overlay.querySelectorAll('.pic');
-            lightboxHero = overlay.querySelector('.product-hero');
-            lightboxGallery.forEach(img => {
-                img.addEventListener('click', onThumbClickLightbox);
-            });
+        lightboxGallery = overlay.querySelectorAll('.pic');
+        lightboxHero = overlay.querySelector('.product-hero');
+        lightboxGallery.forEach(img => {
+            img.addEventListener('click', onThumbClickLightbox);
+        });
 
-            const btnOverlayNext = overlay.querySelector('.next');
-            const btnOverlayPrevious = overlay.querySelector('.previous');
-            btnOverlayNext.addEventListener('click', handleBtnClickNextOverlay);
-            btnOverlayPrevious.addEventListener('click', handleBtnClickPreviousOverlay);
-        }
-        overlay.classList.remove('hidden');
+        const btnOverlayNext = overlay.querySelector('.next');
+        const btnOverlayPrevious = overlay.querySelector('.previous');
+        btnOverlayNext.addEventListener('click', handleBtnClickNextOverlay);
+        btnOverlayPrevious.addEventListener('click', handleBtnClickPreviousOverlay);
     }
+    overlay.classList.remove('hidden');
+}
 }
 
 function onBtnOverlayClose() {
-    overlay.classList.add('hidden');
+overlay.classList.add('hidden');
 }
 
 function onThumbClickLightbox(event) {
-    //clear active state for all thumbnails
-    lightboxGallery.forEach(img => {
-        img.classList.remove('active');
-    });
-    //set active thumbnail
-    event.target.parentElement.classList.add('active');
-    //update hero image
-    lightboxHero.src = event.target.src.replace('-thumbnail', '');
+//clear active state for all thumbnails
+lightboxGallery.forEach(img => {
+    img.classList.remove('active');
+});
+//set active thumbnail
+event.target.parentElement.classList.add('active');
+//update hero image
+lightboxHero.src = event.target.src.replace('-thumbnail', '');
 }
 
 
 function handleBtnClickNextOverlay() {
-    let imageIndex = getOverlayCurrentImageIndex();
-    imageIndex++;
-    if (imageIndex > 4) {
-        imageIndex = 1;
-    }
-    setOverlayHeroImage(imageIndex);
+let imageIndex = getOverlayCurrentImageIndex();
+imageIndex++;
+if (imageIndex > 4) {
+    imageIndex = 1;
+}
+setOverlayHeroImage(imageIndex);
 }
 
 function handleBtnClickPreviousOverlay() {
-    let imageIndex = getOverlayCurrentImageIndex();
-    imageIndex--;
-    if (imageIndex < 1) {
-        imageIndex = 4;
-    }
-    setOverlayHeroImage(imageIndex);
+let imageIndex = getOverlayCurrentImageIndex();
+imageIndex--;
+if (imageIndex < 1) {
+    imageIndex = 4;
+}
+setOverlayHeroImage(imageIndex);
 }
 
 function getOverlayCurrentImageIndex() {
-    const imageIndex = parseInt(lightboxHero.src.split('\\').pop().split('/').pop().replace('.jpg', '').replace('image-product-', ''));
-    return imageIndex;
+const imageIndex = parseInt(lightboxHero.src.split('\\').pop().split('/').pop().replace('.jpg', '').replace('image-product-', ''));
+return imageIndex;
 }
 
 function setOverlayHeroImage(imageIndex) {
-    lightboxHero.src = `image/image-product-${imageIndex}.jpg`;
-    //images are not sync
-    lightboxGallery.forEach(img => {
-        img.classList.remove('active');
-    });
-    //set active thumbnail
-    lightboxGallery[imageIndex-1].classList.add('active');
+lightboxHero.src = `image/image-product-${imageIndex}.jpg`;
+//images are not sync
+lightboxGallery.forEach(img => {
+    img.classList.remove('active');
+});
+//set active thumbnail
+lightboxGallery[imageIndex-1].classList.add('active');
 }
+

@@ -1,7 +1,3 @@
-const menu = document.querySelector('.menu');
-const btnHamburger = document.querySelector('.hamburger');
-const btnMenuClose = document.querySelector('#btnMenuClose');
-
 const cart = document.querySelector('.cart');
 const btnCart = document.querySelector('.cart-btn');
 

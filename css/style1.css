@@ -142,7 +142,9 @@ section {
 .header .header-1 .search-form label:hover {
     color: var(--yellow);
 }
-
+.header .header-1 .icons{
+    display: flex;
+}
 .header .header-1 .icons div,
 .header .header-1 .icons a {
     font-size: 2.5rem;
@@ -212,18 +214,21 @@ section {
     display: flex;
     width: 150px;
     flex-direction: column;
+    position: relative;
 }
 
 .select-box .options-container {
     background: var(--yellow);
     color: #fff;
-    max-height: 0;
     width: 100%;
     opacity: 0;
+    visibility: hidden;
     transition: all 0.4s;
     border-radius: 8px;
     overflow: hidden;
     order: 1;
+    position: absolute;
+    top: 100%;
 }
 
 .selected {
@@ -253,9 +258,12 @@ section {
 }
 
 .select-box .options-container.active {
-    max-height: 250px;
+    
     opacity: 1;
     overflow-y: scroll;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
 }
 
 .select-box .options-container.active+.selected::after {
