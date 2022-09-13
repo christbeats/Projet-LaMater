@@ -28,7 +28,6 @@ registerForm.classList.toggle('active');
 document.querySelector('#close-register-btn').onclick = () => {
 registerForm.classList.remove('active');
 }
-console.log(user)
 if((user == null) || (user == undefined)){
     document.querySelector("#logout-btn").style.display = "none"
    
@@ -36,7 +35,7 @@ if((user == null) || (user == undefined)){
     document.querySelector("#logout-btn").style.display = "block"
     document.querySelector("#register-btn").style.display = "none"
     document.querySelector("#login-btn").style.display = "none"
-    swal(`bienvenue ${ user.last_name}`)
+    // swal(`bienvenue ${ user.last_name}`)
 }
 
      document.querySelector('#logout-btn').addEventListener('click', (e)=>{
@@ -80,7 +79,7 @@ const heroImg = document.querySelector('.product-hero');
 const btnNext = document.querySelector('.next');
 const btnPrevious = document.querySelector('.previous');
 
-const btnAddToCard = document.querySelector('.btn');
+const btnAddToCard = document.querySelector('.btn-card');
 const cartCount = document.querySelector('.cart-count');
 const productInShoppingCart = document.querySelector('.products-in-cart');
 
@@ -89,8 +88,7 @@ const checkout = document.querySelector('.checkout');
 
 const overlay = document.querySelector('.overlay');
 const lightbox = document.querySelector('.lightbox');
-
-
+console.log(btnAddToCard)
 let lightboxGallery;
 let lightboxHero;
 
@@ -191,16 +189,18 @@ gallery[imageIndex-1].classList.add('active');
 
 function addToCart() {
 productsInCart += productCounterValue;
-
+console.log(this)
+const productDetails = JSON.parse(localStorage.getItem('productDetails'))
+console.log(productDetails.price)
 const productHTMLElement = `
 <div class="item">
-    <img class="product-img" src="image/image-product-1-thumbnail.jpg" alt="product 1 thumb">
+    <img class="product-img" src=${productDetails.medias[0].link} alt="product 1 thumb">
     <div class="details">
-        <div class="product-name">Featured Book</div>
+        <div class="product-name">${productDetails.name}</div>
         <div class="price-group">
-            <div class="price">$${(price*discount).toFixed(2)}</div> x
+            <div class="price">${(productDetails.price).toFixed(2)}F</div> x
             <div class="count">${productsInCart}</div>
-            <div class="total-amount">$${(price*discount*productsInCart).toFixed(2)}</div>
+            <div class="total-amount">${(productDetails.price*productsInCart).toFixed(2)}F</div>
     </div>
     </div>
     <img id="btnDelete" src="image/icon-delete.svg" alt="icon delete">
@@ -263,7 +263,7 @@ updateCart();
 const el = document.querySelector('.count');
 const totalAmount = document.querySelector('.total-amount');
 el.innerHTML = productsInCart;
-totalAmount.innerHTML = `$${(price*discount*productsInCart).toFixed(2)}`;
+totalAmount.innerHTML = `${(productDetails.price*productsInCart).toFixed(2)}F`;
 
 if (productsInCart == 0) {
     productInShoppingCart.innerHTML = '';

@@ -18,7 +18,7 @@ fetch(SingleCollection)
             data2 += `
 
             <div class="grid-item">
-            
+            <input type="hidden" value=${values.id} >
             <div class="box">
             <div class="image">
             <img src=${values.medias.length == 0? 'image/none.jpg' : values.medias[0].link } alt="img">
@@ -26,7 +26,7 @@ fetch(SingleCollection)
             <div class="content">
             <h3>${values.name}</h3>
             <div class="price">${values.price}FCFA</div>
-            <a href="" class="btn">add to cart</a>
+            <a href="" class="btn">view</a>
             </div>
             </div>
             </div>

@@ -267,7 +267,7 @@ header .hidden {
   background-color: #ffede0;
 }
 
-.product .btn {
+.product .btn-card {
   background-color: #ff7d1a;
   color: white;
   margin-top: 1.5rem;
@@ -290,7 +290,7 @@ header .hidden {
   cursor: pointer;
 }
 
-.product .btn img {
+.product .btn-card img {
   height: 1.5rem;
   -webkit-filter: brightness(300%);
           filter: brightness(300%);
@@ -454,7 +454,7 @@ header .hidden {
     border-radius: 1rem;
     padding: 1.2rem 0.5rem;
   }
-  .product .count-btn-group .btn {
+  .product .count-btn-group .btn-card {
     width: 100%;
   }
 }

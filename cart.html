@@ -32,8 +32,9 @@
 
     <header class="header">
 
+        
         <div class="header-1">
-            <a href="accueil.html" class="logo"><span id="logo"></span><span id="name"></span></a>
+            <a href="accueil.html" class="logo"><img src="" alt="logo" id="logo"><span id="name"></span></a>
 
             <form action="" class="search-form">
                 <input type="search" name="" placeholder="search here..." id="search-box">
@@ -60,7 +61,7 @@
                 <div id="login-btn" class="fas fa-user"></div>
                 <div id="logout-btn" class="fa fa-sign-out"></div>
                 <div id="cart-btn" class="fas fa-shopping-cart">
-                    <div class="cart-count">3</div>
+                    <div class="cart-count">0</div>
                 </div>
             </div>
 
@@ -154,14 +155,14 @@
 
         <!-- Lightbox -->
         <section class="lightbox">
-            <img class="product-hero" src="image/image-product-1.jpg" alt="image product">
+            <img class="product-hero" src="image/image-product-1.jpg" alt="image product" id="product-details-image">
             <div class="previous arrow">
                 <img src="image/icon-previous.svg" alt="icon previous">
             </div>
             <div class="next arrow">
                 <img src="image/icon-next.svg" alt="icon next">
             </div>
-            <div class="thumb-gallery">
+            <!-- <div class="thumb-gallery">
                 <div class="pic active">
                     <img src="image/image-product-1-thumbnail.jpg" alt="thumb-1">
                 </div>
@@ -174,21 +175,21 @@
                 <div class="pic">
                     <img src="image/image-product-4-thumbnail.jpg" alt="thumb-4">
                 </div>
-            </div>
+            </div> -->
         </section>
 
         <!-- Product -->
         <section class="product">
-            <div class="company-name">BOOKLY</div>
-            <div class="title">FEATURES BOOKS</div>
-            <div class="description">
+            <div class="company-name" id="company-name">BOOKLY</div>
+            <div class="title" id="product-details-name">FEATURES BOOKS</div>
+            <div class="description" id="product-details-description">
                 These low-profile sneakers are your perfect casual wear companion.
                 Featuring a durable rubber outer sole, they'll withstand everything 
                 the weather can offer.
             </div>
             <div class="price-wrapper">
                 <div class="group">
-                    <div class="price">20000FCFA</div>
+                    <div class="price"> <span id="product-details-price">20000</span> FCFA</div>
                 </div>
             </div>
 
@@ -199,7 +200,7 @@
                     <img id="btnPlus" src="image/icon-plus.svg" alt="icon plus">
                 </div>
 
-                <div class="btn">
+                <div class="btn-card">
                     <img src="image/icon-cart.svg" alt="icon cart">
                     <p>Add to cart</p>
                 </div>
@@ -277,6 +278,7 @@
     <script src="js/connexion.js"></script>
     <script src="js/login.js"></script> 
     <script src="js/SingleProduct.js"></script>
+    <script src="js/productDetails.js"></script>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
 

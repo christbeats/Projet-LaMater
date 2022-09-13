@@ -47,8 +47,8 @@ categoryName.forEach(elt => {
         
             data2 += `
 
-            <div class="grid-item grid-item-details">
-            
+            <div class="grid-item ">
+            <input type= "hidden" value = ${values.id} >
             <div class="box">
             <div class="image">
             <img src=${values.medias.length == 0? 'image/none.jpg' : values.medias[0].link } alt="img">
@@ -56,7 +56,7 @@ categoryName.forEach(elt => {
             <div class="content">
             <h3>${values.name}</h3>
             <div class="price">${values.price}FCFA</div>
-            <a href="" class="btn">add to cart</a>
+            <p class="btn">view</p>
             </div>
             </div>
             </div>
@@ -76,6 +76,30 @@ categoryName.forEach(elt => {
             
            document.querySelector('#category_field').innerHTML= "Categorie  " + elt.querySelector("label").innerHTML
         }
+
+        setTimeout(() => {
+            const singleProduct = "https://api.genuka.com/2021-10/companies/2/products"
+            const grids = document.querySelectorAll('.grid-item')
+            const product = {}
+            grids.forEach(elt => { 
+                    console.log(elt)
+                elt.addEventListener('click', (e)=>{
+                    e.stopPropagation()
+                     let idProduct=   elt.querySelector('input').value
+                        console.log(idProduct)
+                     fetch(singleProduct + '/'+ idProduct)
+                     .then( (res) => 
+                     {
+                         return res.json()
+                     })
+                    .then(async res => { 
+                             let data = await res
+                            data? localStorage.setItem('productDetails', JSON.stringify(data)) : false
+                            location.href  ='cart.html'
+                     })
+                })
+            })
+        }, 3000);
 
     }).catch((err) => {
         console.log(err);
